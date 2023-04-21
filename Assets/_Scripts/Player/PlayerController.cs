@@ -5,7 +5,24 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public List<GameObject> weapons = new List<GameObject>();
+    Vector3 bulletOffSet = new Vector3(0,1,1);
 
+    [SerializeField] private float m_fireRate = 0.5f;
+    public float fireRate
+    {
+        get { return m_fireRate; }
+        set 
+        {
+            if (fireRate >= 0.2f)
+            {
+                m_fireRate = value;
+                CancelInvoke();
+                InvokeRepeating(nameof(FireWeapon), 0, fireRate);
+            }
+        }
+    }
+
+    // ENCAPSULATION
     // Getters and setters for player's health, movement speed and ammo type.
     [SerializeField] private float m_PlayerHealth = 100;
     public float playerHealth
@@ -22,6 +39,8 @@ public class PlayerController : MonoBehaviour
     }
 
     [SerializeField] float maxSpeed = 20;
+
+    // ENCAPSULATION
     [SerializeField] private float m_movementSpeed = 10;
     public float movementSpeed
     {
@@ -43,6 +62,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // ENCAPSULATION
     [SerializeField] private GameObject m_ammoType;
     public GameObject ammoType
     {
@@ -56,9 +76,6 @@ public class PlayerController : MonoBehaviour
             m_ammoType = value;
         }
     }
-
-    Vector3 bulletOffSet = new Vector3(0,1,1);
-
 
     // Move player on othe X and Z
     public virtual void Move()
@@ -75,6 +92,7 @@ public class PlayerController : MonoBehaviour
         gameObject.transform.LookAt(lookDirection);
     }
 
+    //  Fire weapons depending on the ammo type currently equipped
     public virtual void FireWeapon()
     {
         string weaponName = m_ammoType.name;
@@ -95,7 +113,6 @@ public class PlayerController : MonoBehaviour
         }
         
     }
-
 
     public void OnCollisionEnter(Collision collision)
     {
@@ -132,6 +149,17 @@ public class PlayerController : MonoBehaviour
                     break;
                 }
         }
-        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Fire"))
+        {
+            fireRate -= 0.1f;
+        }
+        if (other.gameObject.CompareTag("Speed"))
+        {
+            movementSpeed += 2f;
+        }
     }
 }

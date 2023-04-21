@@ -96,8 +96,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.50622404, y: 0.47573793, z: 0.4844519}
-  m_Center: {x: 0, y: 0.009565257, z: 0.021385126}
+  m_Size: {x: 0.61064786, y: 0.47573793, z: 0.58159924}
+  m_Center: {x: -0.016237527, y: 0.009565265, z: 0.004585758}
 --- !u!114 &7825214045756041416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,5 +110,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4ff2768644a06b48a1104335dbd0b52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 30
-  lifeTime: 3
+  bulletSpeed: 20
+  lifeTime: 4

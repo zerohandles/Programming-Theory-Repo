@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class CharacterSelect : MonoBehaviour
 {
-    public int playerChoice = 0;
+    public static int playerChoice = 0;
 
 
     void Start()
@@ -11,31 +11,25 @@ public class CharacterSelect : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (playerChoice != 0)
-        {
-            SceneManager.LoadScene(1);
-        }
-    }
-
     public void SelectPunk()
     {
-        playerChoice = 2;
+        playerChoice = 1;
         Debug.Log("Punk Selected");
+        SceneManager.LoadScene(1);
     }
 
     public void SelectLawyer()
     {
-        playerChoice = 1;
+        playerChoice = 0;
         Debug.Log("Lawyer Selected");
+        SceneManager.LoadScene(1);
     }
 
     public void SelectFarmer()
     {
-        playerChoice = 3;
+        playerChoice = 2;
         Debug.Log("Farmer Selected");
+        SceneManager.LoadScene(1);
     }
 
 }

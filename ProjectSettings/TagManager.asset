@@ -9,6 +9,9 @@ TagManager:
   - Carrot
   - Bone
   - Banana
+  - Spawnpoint
+  - Fire
+  - Speed
   layers:
   - Default
   - TransparentFX

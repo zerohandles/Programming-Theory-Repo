@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 404231819014128410}
   - component: {fileID: 445370237780844502}
   m_Layer: 0
-  m_Name: LawyerPlayer
+  m_Name: Lawyer
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -322,7 +322,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842047880752568448}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1

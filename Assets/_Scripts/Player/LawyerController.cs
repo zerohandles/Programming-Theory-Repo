@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class LawyerController : PlayerController
 {
-    float fireRate = 0.5f;
-
     // INHEIRITANCE
     private void Awake()
     {
@@ -15,9 +13,10 @@ public class LawyerController : PlayerController
         InvokeRepeating(nameof(FireWeapon), 0, fireRate);
     }
 
-    // INHEIRITANCE
+    // ABSTRACTION
     void FixedUpdate()
     {
         Move();
     }
+
 }

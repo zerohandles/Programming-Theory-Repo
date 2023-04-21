@@ -2,24 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PunkController : PlayerController
+public class FarmerController : PlayerController
 {
-    float fireRate = 0.5f;
-
     // INHEIRITANCE
     private void Awake()
     {
-        playerHealth = 150;
-        movementSpeed = 7;
-        ammoType = weapons[2];
+        fireRate = 0.3f;
+        playerHealth = 80;
+        movementSpeed = 10;
+        ammoType = weapons[3];
         InvokeRepeating(nameof(FireWeapon), 0, fireRate);
     }
 
-    // INHEIRITANCE
+    // ABSTRACTION
     void FixedUpdate()
     {
         Move();
     }
-       
-
 }
