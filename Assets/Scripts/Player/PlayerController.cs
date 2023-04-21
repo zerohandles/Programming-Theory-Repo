@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public List<GameObject> weapons = new List<GameObject>();
 
-    // Getters and setters for player's 
+    // Getters and setters for player's health, movement speed and ammo type.
     [SerializeField] private float m_PlayerHealth = 100;
     public float playerHealth
     {
@@ -21,7 +21,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private float turnSpeed = 2;
     [SerializeField] float maxSpeed = 20;
     [SerializeField] private float m_movementSpeed = 10;
     public float movementSpeed
@@ -60,19 +59,41 @@ public class PlayerController : MonoBehaviour
 
     Vector3 bulletOffSet = new Vector3(0,1,1);
 
+
+    // Move player on othe X and Z
     public virtual void Move()
     {
         float horizontalMovement = Input.GetAxis("Horizontal");
         float vertialMovement = Input.GetAxis("Vertical");
 
-        transform.Translate(m_movementSpeed * Time.deltaTime * vertialMovement * Vector3.forward);
-        transform.Rotate(turnSpeed * horizontalMovement * Vector3.up);
+        Vector3 direction = new Vector3(horizontalMovement, 0, vertialMovement);
+        Vector3 lookDirection = direction + gameObject.transform.position;
+
+        transform.Translate(m_movementSpeed * Time.deltaTime * direction, Space.World);
+        
+        // Character model will look in the direction of movement
+        gameObject.transform.LookAt(lookDirection);
     }
 
     public virtual void FireWeapon()
     {
         string weaponName = m_ammoType.name;
-        Instantiate(ammoType, transform.position + bulletOffSet, transform.rotation);
+        switch (weaponName)
+        {
+            default:
+                {
+                    Instantiate(ammoType, transform.position + bulletOffSet, transform.rotation);
+                    break;
+                }
+            case "BananaAmmo":
+                {
+                    Instantiate(ammoType, transform.position + bulletOffSet, Quaternion.Euler(0, 0, 0));
+                    Instantiate(ammoType, transform.position + bulletOffSet, Quaternion.Euler(0,120, 0));
+                    Instantiate(ammoType, transform.position + bulletOffSet, Quaternion.Euler(0, 240, 0));
+                    break;
+                }
+        }
+        
     }
 
 

@@ -11,12 +11,12 @@ public class PunkController : PlayerController
     {
         playerHealth = 150;
         movementSpeed = 7;
-        ammoType = weapons[3];
+        ammoType = weapons[2];
         InvokeRepeating(nameof(FireWeapon), 0, fireRate);
     }
 
     // INHEIRITANCE
-    void Update()
+    void FixedUpdate()
     {
         Move();
     }
