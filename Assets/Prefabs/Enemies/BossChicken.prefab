@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: -3785354953681990784}
   m_Layer: 0
   m_Name: BossChicken
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -322,8 +322,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1eab9bca0eb2cc4b9ce227819231f17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 7
+  movementSpeed: 10
   health: 5
+  drop:
+  - {fileID: 1632481297729436855, guid: 1e6c0807fc2d7d943bf171eee4fa92dd, type: 3}
+  - {fileID: 4274338776498208820, guid: 9a9de8829efc84e47b3c8bbc6a32cc09, type: 3}
 --- !u!1 &2502328524006905747
 GameObject:
   m_ObjectHideFlags: 0

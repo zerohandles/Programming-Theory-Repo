@@ -1367,7 +1367,7 @@ GameObject:
   - component: {fileID: -1381336900380826089}
   m_Layer: 0
   m_Name: BossCow
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1449,7 +1449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1eab9bca0eb2cc4b9ce227819231f17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 3
+  movementSpeed: 4
   health: 3
   drop:
   - {fileID: 1632481297729436855, guid: 1e6c0807fc2d7d943bf171eee4fa92dd, type: 3}

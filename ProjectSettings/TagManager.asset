@@ -12,6 +12,7 @@ TagManager:
   - Spawnpoint
   - Fire
   - Speed
+  - Enemy
   layers:
   - Default
   - TransparentFX

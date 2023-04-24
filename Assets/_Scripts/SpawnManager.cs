@@ -9,7 +9,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] List<GameObject> bossEnemies;
     GameObject[] spawnPoints;
 
-    [SerializeField] int enemiesToSpawn = 5;
+    private int enemiesToSpawn = 3;
     private int wave = 0;
     private int enemySpawnIndex = 0;
     private int maxWaves = 5;
@@ -43,18 +43,19 @@ public class SpawnManager : MonoBehaviour
             }
             counter++;
         }
-        enemiesToSpawn += 5;
+        enemiesToSpawn += 3;
         enemySpawnIndex += 2;
 
+        yield return new WaitForSeconds(15);
         // Spawn the wave boss at a random spawn point
         Instantiate(bossEnemies[wave - 1], spawnPoints[Random.Range(0, spawnPoints.Length - 1)].transform.position, Quaternion.identity);
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(15);
 
         // Start the next wave if the player hasnt reached the last wave. 
         if (wave != maxWaves)
         {
             StartCoroutine(SpawnEnemyWaves());
-        }
+        }  
     }
 }

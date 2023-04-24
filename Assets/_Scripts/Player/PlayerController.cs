@@ -6,7 +6,11 @@ public class PlayerController : MonoBehaviour
 {
     public List<GameObject> weapons = new List<GameObject>();
     Vector3 bulletOffSet = new Vector3(0,1,1);
+    private float xBoundry = 52;
+    private float zBoundry = 29;
 
+    // ENCAPSULATION
+    // Getters and setters for player's health, movement speed, fire rate and ammo type.
     [SerializeField] private float m_fireRate = 0.5f;
     public float fireRate
     {
@@ -19,11 +23,16 @@ public class PlayerController : MonoBehaviour
                 CancelInvoke();
                 InvokeRepeating(nameof(FireWeapon), 0, fireRate);
             }
+            else
+            {
+                m_fireRate = 0.1f;
+                CancelInvoke();
+                InvokeRepeating(nameof(FireWeapon), 0, fireRate);
+            }
         }
     }
 
     // ENCAPSULATION
-    // Getters and setters for player's health, movement speed and ammo type.
     [SerializeField] private float m_PlayerHealth = 100;
     public float playerHealth
     {
@@ -77,7 +86,30 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Move player on othe X and Z
+
+    // Keeps player within the game bounds
+    private void Update()
+    {
+        if (transform.position.x < -xBoundry)
+        {
+            transform.position = new Vector3(-xBoundry, transform.position.y, transform.position.z);
+        }
+        if (transform.position.z < -zBoundry)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, -zBoundry);
+        }
+        if (transform.position.x > xBoundry)
+        {
+            transform.position = new Vector3(xBoundry, transform.position.y, transform.position.z);
+        }
+        if (transform.position.z > zBoundry)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, zBoundry);
+        }
+    }
+
+
+    // Move player on the X and Z
     public virtual void Move()
     {
         float horizontalMovement = Input.GetAxis("Horizontal");
@@ -155,11 +187,13 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Fire"))
         {
-            fireRate -= 0.1f;
+            fireRate -= 0.2f;
+            Destroy(other.gameObject);
         }
         if (other.gameObject.CompareTag("Speed"))
         {
-            movementSpeed += 2f;
+            movementSpeed += 3f;
+            Destroy(other.gameObject);
         }
     }
 }
