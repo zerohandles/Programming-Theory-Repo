@@ -1454,6 +1454,9 @@ MonoBehaviour:
   drop:
   - {fileID: 1632481297729436855, guid: 1e6c0807fc2d7d943bf171eee4fa92dd, type: 3}
   - {fileID: 4274338776498208820, guid: 9a9de8829efc84e47b3c8bbc6a32cc09, type: 3}
+  - {fileID: 3151508017764150382, guid: 5dd9cd8cce239794287d5535375964ef, type: 3}
+  - {fileID: 4274283952532690542, guid: 376c4653dccc2c045b3224a0eeaf9dcf, type: 3}
+  - {fileID: 7491482760630893367, guid: c28eeab95e071784eb2aacedbf524066, type: 3}
 --- !u!1 &6354349770458493807
 GameObject:
   m_ObjectHideFlags: 0
