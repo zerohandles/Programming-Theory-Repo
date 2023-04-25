@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private float zBoundry = 29;
 
     // ENCAPSULATION
-    // Getters and setters for player's health, movement speed, fire rate and ammo type.
+    // Getters and setters for player's movement speed, fire rate and ammo type.
     [SerializeField] private float m_fireRate = 0.5f;
     public float fireRate
     {
@@ -31,8 +31,6 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
-
     [SerializeField] float maxSpeed = 20;
 
     // ENCAPSULATION
@@ -71,7 +69,6 @@ public class PlayerController : MonoBehaviour
             m_ammoType = value;
         }
     }
-
 
     // Keeps player within the game bounds
     private void Update()
@@ -136,6 +133,7 @@ public class PlayerController : MonoBehaviour
     {
         string ammo = collision.gameObject.tag;
         
+        // Change ammo type depending on the powerup
         switch(ammo)
         {
             case "Pizza":
@@ -169,6 +167,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Additional power up effects added on collision
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Fire"))

@@ -12,11 +12,13 @@ public class WeaponController : MonoBehaviour
         StartCoroutine(nameof(LifeTimer));
     }
 
+    // Travel in a straight line
     public void Update()
     {
         transform.Translate(bulletSpeed * Time.deltaTime * Vector3.forward);
     }
 
+    // Destroy object after its lifetime.
     IEnumerator LifeTimer()
     {
         yield return new WaitForSeconds(lifeTime);

@@ -11,6 +11,7 @@ public class CharacterSelect : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    // Load into the main scene with the selected character
     public void SelectPunk()
     {
         playerChoice = 1;

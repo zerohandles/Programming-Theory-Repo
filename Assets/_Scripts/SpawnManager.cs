@@ -20,13 +20,16 @@ public class SpawnManager : MonoBehaviour
 
     void Start()
     {
+        // Create an array of all spawn locations
         spawnPoints = GameObject.FindGameObjectsWithTag("Spawnpoint");
 
+        // Spawn in choose player character
         int choice = CharacterSelect.playerChoice;
         Instantiate(playerCharacters[choice], Vector3.zero, Quaternion.identity);
         StartCoroutine(SpawnEnemyWaves());
     }
 
+    // Spawn in new enemies every wave
     IEnumerator SpawnEnemyWaves()
     {
         wave++;
