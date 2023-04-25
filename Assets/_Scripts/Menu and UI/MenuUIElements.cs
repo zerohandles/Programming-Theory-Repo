@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MenuUIElements : MonoBehaviour
 {
+    public GameObject heathBar;
+
+    private void Start()
+    {
+        heathBar.SetActive(true);
+    }
 
     public void QuitGame()
     {
