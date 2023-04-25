@@ -8,11 +8,14 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] List<GameObject> enemies;
     [SerializeField] List<GameObject> bossEnemies;
     GameObject[] spawnPoints;
+    public MenuUIElements ui;
 
     private int enemiesToSpawn = 3;
-    private int wave = 0;
+    public int wave = 0;
     private int enemySpawnIndex = 0;
     private int maxWaves = 5;
+    public bool isFinalWave = false;
+    
 
 
     void Start()
@@ -28,6 +31,7 @@ public class SpawnManager : MonoBehaviour
     {
         wave++;
         int counter = 0;
+        ui.SetWave();
 
         // Spawn an enemy at each spawn point on the map.
         while (counter < enemiesToSpawn)
@@ -56,6 +60,10 @@ public class SpawnManager : MonoBehaviour
         if (wave != maxWaves)
         {
             StartCoroutine(SpawnEnemyWaves());
-        }  
+        }
+        else
+        {
+            isFinalWave = true;
+        }
     }
 }

@@ -13,11 +13,12 @@ public class BossController : EnemyController
     public override void TakeDamage()
     {
         health--;
-        if (health <= 0)
+        if (health == 0)
         {
             int index = Random.Range(0, drop.Count);
             Instantiate(drop[index], transform.position + dropOffset, drop[index].transform.rotation);
             base.TakeDamage();
+            Debug.Log("Drop");
         }
     }
 }
