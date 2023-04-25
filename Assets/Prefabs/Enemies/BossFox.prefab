@@ -874,6 +874,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 6
+  damageDealt: 20
   health: 4
   drop:
   - {fileID: 962406994767674387, guid: 25b4dfab1b1929e4abc26daa2c54bfa4, type: 3}

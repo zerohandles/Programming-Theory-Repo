@@ -5,12 +5,15 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     private GameObject player;
+    private PlayerHealth playerHealth;
     public float movementSpeed = 5f;
+    [SerializeField] float damageDealt;
 
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        playerHealth = player.GetComponent<PlayerHealth>();
     }
 
 
@@ -32,5 +35,13 @@ public class EnemyController : MonoBehaviour
     public virtual void TakeDamage()
     {
         Destroy(gameObject);
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            playerHealth.playerHealth -= damageDealt;
+        }
     }
 }

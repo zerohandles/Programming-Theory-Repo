@@ -7,7 +7,6 @@ public class PunkController : PlayerController
     // INHEIRITANCE
     private void Awake()
     {
-        playerHealth = 150;
         movementSpeed = 7;
         ammoType = weapons[2];
         InvokeRepeating(nameof(FireWeapon), 0, fireRate);

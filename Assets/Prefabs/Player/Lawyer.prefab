@@ -259,6 +259,7 @@ GameObject:
   - component: {fileID: 4000675566310145963}
   - component: {fileID: 404231819014128410}
   - component: {fileID: 445370237780844502}
+  - component: {fileID: -953048333402354261}
   m_Layer: 0
   m_Name: Lawyer
   m_TagString: Player
@@ -360,10 +361,24 @@ MonoBehaviour:
   - {fileID: 2364930491925942342, guid: f40785cc18690914590d4ef4fe6e10fb, type: 3}
   - {fileID: 5327588963834427439, guid: 24df2389dbaae9545a03d2e910196ce3, type: 3}
   - {fileID: 1077406295481903168, guid: 9c61b041984795b4c9a9789f4917eff3, type: 3}
+  m_fireRate: 0.5
   m_PlayerHealth: 100
   maxSpeed: 20
   m_movementSpeed: 10
   m_ammoType: {fileID: 0}
+--- !u!114 &-953048333402354261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842047880752568448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31065ab08f958b94cadaaeb426298e73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PlayerHealth: 100
 --- !u!1 &842047880752568452
 GameObject:
   m_ObjectHideFlags: 0

@@ -200,6 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 4
+  damageDealt: 7
 --- !u!1 &7846777955198974767
 GameObject:
   m_ObjectHideFlags: 0

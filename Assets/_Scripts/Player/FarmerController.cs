@@ -8,7 +8,6 @@ public class FarmerController : PlayerController
     private void Awake()
     {
         fireRate = 0.3f;
-        playerHealth = 80;
         movementSpeed = 10;
         ammoType = weapons[3];
         InvokeRepeating(nameof(FireWeapon), 0, fireRate);

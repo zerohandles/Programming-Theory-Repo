@@ -1831,6 +1831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 2
+  damageDealt: 2
 --- !u!1 &6819824791053868961
 GameObject:
   m_ObjectHideFlags: 0

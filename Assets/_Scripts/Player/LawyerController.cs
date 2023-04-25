@@ -7,7 +7,6 @@ public class LawyerController : PlayerController
     // INHEIRITANCE
     private void Awake()
     {
-        playerHealth = 100;
         movementSpeed = 13;
         ammoType = weapons[0];
         InvokeRepeating(nameof(FireWeapon), 0, fireRate);

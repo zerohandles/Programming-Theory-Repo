@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public List<GameObject> weapons = new List<GameObject>();
-    Vector3 bulletOffSet = new Vector3(0,1,1);
+    Vector3 bulletOffSet = new Vector3(0,1,0);
     private float xBoundry = 52;
     private float zBoundry = 29;
 
@@ -32,20 +32,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // ENCAPSULATION
-    [SerializeField] private float m_PlayerHealth = 100;
-    public float playerHealth
-    {
-        get { return m_PlayerHealth; }
-        set
-        {
-            if (value < 0)
-            {
-                value = 0;
-            }
-            m_PlayerHealth = value;
-        }
-    }
 
     [SerializeField] float maxSpeed = 20;
 
